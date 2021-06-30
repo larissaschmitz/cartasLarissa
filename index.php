@@ -72,7 +72,8 @@
          
 
 } 
-    
+elseif ($acao == 'sortear'){
+    mostrarCartas($cartas,$naipe);}
   
 ?>
 </body>
