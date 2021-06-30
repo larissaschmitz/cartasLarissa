@@ -58,6 +58,7 @@
     </form> 
     <?php
     if ($acao == 'jogar'){
+      
     
         $h1 = isset($_POST['h1']) ? $_POST['h1'] : 0;
         $h2 = isset($_POST['h2']) ? $_POST['h2'] : 0;
@@ -78,7 +79,8 @@
           echo "Carta 5: ".$h5."<br>";
         if ($h6 != 0)
           echo "Carta 6: ".$h6."<br>";
-         
+
+          
           echo "Computador <br>";
           $z1 = isset($_POST['z1']) ? $_POST['z1'] : 0;
           $z2 = isset($_POST['z2']) ? $_POST['z2'] : 0;
@@ -104,7 +106,9 @@
        
 }       
 elseif ($acao == 'sortear'){
-    mostrarCartas($cartas,$naipe);}
+    mostrarCartas($cartas,$naipe);
+    //*mostrarCartasComp($cartasComp,$naipe);
+  }
   
 ?>
 </body>
