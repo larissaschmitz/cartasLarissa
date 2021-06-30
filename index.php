@@ -11,6 +11,7 @@
     $cartas = sortear($numeros);
     $cartasComp = sortearComp($numeros);
     $z=0;
+
     ?>
 
     <head> 
@@ -46,12 +47,14 @@
       echo "<input type='hidden' name='h".($x+1)."' value='".$cartas[$x]."'>";
     }
 
+    
+
     for ($z = 0; $z < $numeros; $z++){
         echo "<input type='hidden' name='z".($z+1)."' value='".$cartasComp[$z]."'>";
       }
     ?>
-    <button type="submit" name="acao" id="acao" value="sortear">Sortear</button>
-            <button type="submit"  name="acao" id="acao" value="jogar">Jogar</button>
+        <button type="submit" name="acao" id="acao" value="sortear">Sortear</button>
+        <button type="submit"  name="acao" id="acao" value="jogar">Jogar</button>
     </form> 
     <?php
     if ($acao == 'jogar'){
@@ -96,8 +99,10 @@
             echo "Carta 5: ".$z5."<br>";
           if ($z6 != 0)
             echo "Carta 6: ".$z6."<br>";
-
-} 
+            
+            
+       
+}       
 elseif ($acao == 'sortear'){
     mostrarCartas($cartas,$naipe);}
   

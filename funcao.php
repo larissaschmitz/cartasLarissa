@@ -9,11 +9,14 @@
                 $cartas = array_diff($cartas, $cartas);
                 $x=0;
             }
-            $cartas[] = $n;           
+            $cartas[] = $n;      
         }
         sort($cartas);
         return $cartas;
     }
+
+
+
 
     function mostrarCartas($cartas, $naipe){
         $cont=1;
@@ -29,7 +32,16 @@
             echo "<table><tr>";
     
             foreach ($cartas as $c){
-                echo "<td>" .$c."</td>";
+                if($c == 1){
+                    echo "<td>A</td>";
+                }  else if ($c == 11){
+                    echo "<td>J</td>";
+                }  else if ($c == 12){
+                    echo "<td>Q</td>";
+                }  else if ($c == 13){
+                    echo "<td>K</td>";
+                } else {
+                echo "<td>" .$c."</td>";}
                 if($c == 1){
                     echo "<img src='img/$naipe/a-$naipe.png' width='200' height='291'>";
                 } for($cont = 2; $cont <= 10; $cont++){
@@ -59,6 +71,7 @@
                 return $cartasComp;
             }
 
+            
 
 
 ?>
