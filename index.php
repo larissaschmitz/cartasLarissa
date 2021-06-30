@@ -9,6 +9,8 @@
     $naipe = isset($_POST['naipe']) ? $_POST['naipe'] : 0;
     $acao = isset($_POST['acao']) ? $_POST['acao'] : "";
     $cartas = sortear($numeros);
+    $cartasComp = sortearComp($numeros);
+    $z=0;
     ?>
 
     <head> 
@@ -43,6 +45,10 @@
     for ($x = 0; $x < $numeros; $x++){
       echo "<input type='hidden' name='h".($x+1)."' value='".$cartas[$x]."'>";
     }
+
+    for ($z = 0; $z < $numeros; $z++){
+        echo "<input type='hidden' name='z".($z+1)."' value='".$cartasComp[$z]."'>";
+      }
     ?>
     <button type="submit" name="acao" id="acao" value="sortear">Sortear</button>
             <button type="submit"  name="acao" id="acao" value="jogar">Jogar</button>
@@ -70,6 +76,26 @@
         if ($h6 != 0)
           echo "Carta 6: ".$h6."<br>";
          
+          echo "Computador <br>";
+          $z1 = isset($_POST['z1']) ? $_POST['z1'] : 0;
+          $z2 = isset($_POST['z2']) ? $_POST['z2'] : 0;
+          $z3 = isset($_POST['z3']) ? $_POST['z3'] : 0;
+          $z4 = isset($_POST['z4']) ? $_POST['z4'] : 0;
+          $z5 = isset($_POST['z5']) ? $_POST['z5'] : 0;
+          $z6 = isset($_POST['z6']) ? $_POST['z6'] : 0;
+    
+          if ($z1 != 0)
+            echo "Carta 1: ".$z1."<br>";
+          if ($z2 != 0)
+            echo "Carta 2: ".$z2."<br>";
+          if ($z3 != 0)
+            echo "Carta 3: ".$z3."<br>";
+          if ($z4 != 0)
+            echo "Carta 4: ".$z4."<br>";
+          if ($z5 != 0)
+            echo "Carta 5: ".$z5."<br>";
+          if ($z6 != 0)
+            echo "Carta 6: ".$z6."<br>";
 
 } 
 elseif ($acao == 'sortear'){

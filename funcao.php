@@ -45,6 +45,20 @@
                 } 
     }}
             echo "</tr></table>";
+            function sortearComp($numeros){
+                $cartasComp = array();
+                for ($y = 0; $y < $numeros; $y++){
+                    $comp = rand(1,13);
+                    if(in_array($y, $cartasComp)){
+                        $cartasComp = array_diff($cartasComp, $cartasComp);
+                        $y=0;
+                    }
+                    $cartasComp[] = $comp;           
+                }
+                sort($cartasComp);
+                return $cartasComp;
+            }
+
 
 
 ?>
