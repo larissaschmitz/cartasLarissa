@@ -8,6 +8,7 @@
     $numeros = isset($_POST['numeros']) ? $_POST['numeros'] : 0;
     $naipe = isset($_POST['naipe']) ? $_POST['naipe'] : 0;
     $acao = isset($_POST['acao']) ? $_POST['acao'] : "";
+    $cartas = sortear($numeros);
     ?>
 
     <head> 
@@ -37,7 +38,42 @@
             <option value="6" <?php if ($numeros == 6) echo 'selected'; ?>>6 </option>
             </select>
 <br><br>
-            </body><button type="submit" name="acao" id="acao" value="sortear">Sortear</button>
+<?php
+
+    for ($x = 0; $x < $numeros; $x++){
+      echo "<input type='hidden' name='h".($x+1)."' value='".$cartas[$x]."'>";
+    }
+    ?>
+    <button type="submit" name="acao" id="acao" value="sortear">Sortear</button>
             <button type="submit"  name="acao" id="acao" value="jogar">Jogar</button>
-    </form>  
+    </form> 
+    <?php
+    if ($acao == 'jogar'){
+    
+        $h1 = isset($_POST['h1']) ? $_POST['h1'] : 0;
+        $h2 = isset($_POST['h2']) ? $_POST['h2'] : 0;
+        $h3 = isset($_POST['h3']) ? $_POST['h3'] : 0;
+        $h4 = isset($_POST['h4']) ? $_POST['h4'] : 0;
+        $h5 = isset($_POST['h5']) ? $_POST['h5'] : 0;
+        $h6 = isset($_POST['h6']) ? $_POST['h6'] : 0;
+  
+        if ($h1 != 0)
+          echo "Carta 1: ".$h1."<br>";
+        if ($h2 != 0)
+          echo "Carta 2: ".$h2."<br>";
+        if ($h3 != 0)
+          echo "Carta 3: ".$h3."<br>";
+        if ($h4 != 0)
+          echo "Carta 4: ".$h4."<br>";
+        if ($h5 != 0)
+          echo "Carta 5: ".$h5."<br>";
+        if ($h6 != 0)
+          echo "Carta 6: ".$h6."<br>";
+         
+
+} 
+    
+  
+?>
+</body>
 </html>
