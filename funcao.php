@@ -17,7 +17,7 @@
 
 
     function mostrarCartas($cartas, $naipe){
-        $cont=1;
+        
         if($naipe == 'ouros')
             echo "<h5>O naipe escolhido é: Ouro</h5>";
        elseif ($naipe == 'copas')
@@ -72,8 +72,10 @@
             }
             
 
-            /*function mostrarCartasComp($cartasComp, $naipe){
+            function mostrarCartasComp($cartasComp, $naipe){
+                echo "<table><tr>";
             foreach ($cartasComp as $u){
+                //* aqui eescolha do naipe;
                 if($u == 1){
                     echo "<td>A</td>";
                 }  else if ($u == 11){
@@ -96,10 +98,27 @@
                     echo "<img src='img/$naipe/q-$naipe.png' width='200' height='291'>";
                 } else if ($u==13){
                     echo "<img src='img/$naipe/k-$naipe.png' width='200' height='291'>";
-                } 
+                } }
 
             echo "</tr></table>";}
-            }
-*/
+            
+
+
+function somar($cartas, $numeros){
+    $totalJogador = 0;
+    for($contadorD = 0; $contadorD < $numeros; $contadorD++){
+        $totalJogador = $cartas[$contadorD] + $totalJogador;
+    }
+    return $totalJogador;
+}
+
+function somarC($cartasComp, $numeros){
+    $totalComp = 0;
+    for($contadorD = 0; $contadorD < $numeros; $contadorD++){
+        $totalComp = $cartasComp[$contadorD] + $totalComp;
+    }
+    return $totalComp;
+}
+
 
 ?>
