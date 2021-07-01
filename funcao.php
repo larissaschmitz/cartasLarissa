@@ -75,7 +75,7 @@
             function mostrarCartasComp($cartasComp, $naipe){
                 echo "<table><tr>";
             foreach ($cartasComp as $u){
-                //* aqui eescolha do naipe;
+                //* aqui escolha do naipe;
                 if($u == 1){
                     echo "<td>A</td>";
                 }  else if ($u == 11){
