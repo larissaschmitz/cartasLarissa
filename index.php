@@ -10,7 +10,6 @@
     $acao = isset($_POST['acao']) ? $_POST['acao'] : "";
     $cartas = sortear($numeros);
     $cartasComp = sortearComp($numeros);
-    $totalJogador = somar($cartas, $numeros);
     $totalComp = somarC($cartasComp, $numeros);
 
 
@@ -66,6 +65,8 @@
         $h4 = isset($_POST['h4']) ? $_POST['h4'] : 0;
         $h5 = isset($_POST['h5']) ? $_POST['h5'] : 0;
         $h6 = isset($_POST['h6']) ? $_POST['h6'] : 0;
+
+        $totalJ = somarJ($h1, $h2, $h3, $h4, $h5, $h6);
   
         if ($h1 != 0)
           echo "Carta 1: ".$h1."<br>";
@@ -80,13 +81,19 @@
         if ($h6 != 0)
           echo "Carta 6: ".$h6."<br>";
 
+          echo "Total do Jogador: $totalJ";
+          somarJ($h1, $h2, $h3, $h4, $h5, $h6);
+          echo "<br>";
+
           //*$somaTotal = $h1 + $h2 + $h3 + $h4 + $h5 + $h6;
-          echo "Total do Jogador: $totalJogador<br>";
-          var_dump($cartasComp);
-          echo "Total do computador: $totalComp<br>";
           
-          echo "Computador <br>";
-          mostrarCartasComp($cartasComp,$naipe);   
+          echo "Cartas do computador: <br>";
+          
+          mostrarCartasComp($cartasComp,$naipe);
+          echo "Total do computador: $totalComp<br>";  
+
+          
+          
 }       
 elseif ($acao == 'sortear'){
     mostrarCartas($cartas,$naipe);

@@ -74,6 +74,18 @@
 
             function mostrarCartasComp($cartasComp, $naipe){
                 echo "<table><tr>";
+                 
+                if ($naipe == 'ouros'){
+                    $naipeJ = 'copas';
+                } else if($naipe == 'copas'){
+                    $naipeJ = 'paus';
+                } else if ($naipe == 'paus'){
+                    $naipeJ = 'espadas';
+                } else if ($naipe == 'espadas'){
+                    $naipeJ = 'ouros';
+                }
+
+                
             foreach ($cartasComp as $u){
                 //* aqui escolha do naipe;
                 if($u == 1){
@@ -87,29 +99,25 @@
                 } else {
                 echo "<td>" .$u."</td>";}
                 if($u == 1){
-                    echo "<img src='img/$naipe/a-$naipe.png' width='200' height='291'>";
+                    echo "<img src='img/$naipeJ/a-$naipeJ.png' width='200' height='291'>";
                 } for($contB = 2; $contB <= 10; $contB++){
                     if ($u == $contB){
-                    echo "<img src='img/$naipe/$contB-$naipe.png' width='200' height='291'>";
+                    echo "<img src='img/$naipeJ/$contB-$naipeJ.png' width='200' height='291'>";
                     }
                 } if ($u==11){
-                    echo "<img src='img/$naipe/j-$naipe.png' width='200' height='291'>";
+                    echo "<img src='img/$naipeJ/j-$naipeJ.png' width='200' height='291'>";
                 } else if ($u==12){
-                    echo "<img src='img/$naipe/q-$naipe.png' width='200' height='291'>";
+                    echo "<img src='img/$naipeJ/q-$naipeJ.png' width='200' height='291'>";
                 } else if ($u==13){
-                    echo "<img src='img/$naipe/k-$naipe.png' width='200' height='291'>";
+                    echo "<img src='img/$naipeJ/k-$naipeJ.png' width='200' height='291'>";
                 } }
 
             echo "</tr></table>";}
             
 
-
-function somar($cartas, $numeros){
-    $totalJogador = 0;
-    for($contadorD = 0; $contadorD < $numeros; $contadorD++){
-        $totalJogador = $cartas[$contadorD] + $totalJogador;
-    }
-    return $totalJogador;
+function somarJ($h1, $h2, $h3, $h4, $h5, $h6){
+    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 + $h6;
+    return $totalJ;
 }
 
 function somarC($cartasComp, $numeros){
@@ -119,6 +127,8 @@ function somarC($cartasComp, $numeros){
     }
     return $totalComp;
 }
+
+
 
 
 ?>
