@@ -19,7 +19,7 @@
         <meta cherset="UTF-8">
         <title><?php echo $titulo?></title>
         <html lang="pt-BR";>
-        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css\estilo.css">
     </head>
 
     <body>
