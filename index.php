@@ -92,7 +92,14 @@
           mostrarCartasComp($cartasComp,$naipe);
           echo "Total do computador: $totalComp<br>";  
 
-          
+          if($totalJ > $totalComp){
+            echo "<h1>Parabéns! O usuário $jogador venceu!</h1>";
+          } else if ($totalComp > $totalJ){
+            echo "<h2>Que pena, o computador Ganhou.</h2>";
+          } else if ($totalComp == $totalJ){
+            echo "<h3>Empate! </h3>";
+          }
+
           
 }       
 elseif ($acao == 'sortear'){
