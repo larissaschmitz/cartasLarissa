@@ -97,9 +97,9 @@
 
           echo "Total do computador: $totalComp<br><hr>";  
           if($totalJ > $totalComp){
-            echo "<h1>Parabéns! O usuário $jogador venceu!</h1>";
+            echo "<h1>Parabéns! O usuário, $jogador ganho essa partida!</h1>";
           } else if ($totalComp > $totalJ){
-            echo "<h2>Que pena, o computador Ganhou.</h2>";
+            echo "<h2>Que pena, o computador ganhou essa partida.</h2>";
           } else if ($totalComp == $totalJ){
             echo "<h3>Empate! </h3>";
           }

@@ -116,7 +116,9 @@
             
 
 function somarJ($h1, $h2, $h3, $h4, $h5, $h6){
+    //*Somar total do jogador usando os campos preenchidos pelo hidden
     $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 + $h6;
+    
     return $totalJ;
 }
 
