@@ -19,10 +19,11 @@
         <meta cherset="UTF-8">
         <title><?php echo $titulo?></title>
         <html lang="pt-BR";>
-        <link rel="stylesheet" href="css\estilo.css">
+        <link rel="stylesheet" href="css/estilo.css">
     </head>
 
     <body>
+    <center><h4>Jogo de Cartas</h4></center><hr>
     <form method="post" action="">
         Jogador: <input type="text" name="jogador" required="true" id="jogador" placeholder="Insira o nome do jogador"
             value="<?php echo $jogador;?>"/>
@@ -52,6 +53,7 @@
     ?>
         <button type="submit" name="acao" id="acao" value="sortear">Sortear</button>
         <button type="submit"  name="acao" id="acao" value="jogar">Jogar</button>
+        <br><hr>
     </form> 
     <?php
     if ($acao == 'jogar'){
@@ -84,14 +86,16 @@
           echo "Total do Jogador: $totalJ";
           somarJ($h1, $h2, $h3, $h4, $h5, $h6);
           echo "<br>";
-
+          echo "<hr>";
           //*$somaTotal = $h1 + $h2 + $h3 + $h4 + $h5 + $h6;
           
-          echo "Cartas do computador: <br>";
-          
+          echo "Cartas do computador:<br> <br>";
+          echo "<center>";
           mostrarCartasComp($cartasComp,$naipe);
-          echo "Total do computador: $totalComp<br>";  
+          echo "</center";
+          echo "<hr>";
 
+          echo "Total do computador: $totalComp<br><hr>";  
           if($totalJ > $totalComp){
             echo "<h1>Parabéns! O usuário $jogador venceu!</h1>";
           } else if ($totalComp > $totalJ){
